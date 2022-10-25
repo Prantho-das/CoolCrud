@@ -7,7 +7,7 @@
 - This is Easily Curd Maker For Laravel App.
 - Run Artisan Command and Find Crud Code.
 
-<img src="https://miro.medium.com/max/945/1*hT0650uAynINJMeIftDj-g.png" alt="crud" width="300px" height="400px"/>
+<img src="https://miro.medium.com/max/945/1*hT0650uAynINJMeIftDj-g.png" alt="crud" width="100%" height="400px"/>
 
 ## Installation
 
