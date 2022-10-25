@@ -1,0 +1,30 @@
+{
+    "name": "prantho/coolcrud",
+    "description": "Crud Making Easy",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Prantho\\Crud\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Prantho-das",
+            "email": "pranthokumardas786@gmail.com"
+        }
+    ],
+    "config": {
+        "optimize-autoloader": true
+    },
+    "require": {
+        "php": ">=7.2"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Prantho\\Crud\\CrudServiceProvider"
+            ]
+        }
+    }
+}
