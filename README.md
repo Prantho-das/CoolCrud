@@ -8,7 +8,7 @@
 
 ## Installation
 
-CoolCrud requires [PHP.js](https://php.net/) v7+ to run.
+CoolCrud requires [PHP](https://php.net/) v7+ to run.
 
 Install the dependencies and devDependencies and start the server.
 
