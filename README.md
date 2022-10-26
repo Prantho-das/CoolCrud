@@ -19,11 +19,6 @@ Install the dependencies and devDependencies and start the server.
 composer require prantho/coolcrud
 ```
 
-## Plugins
-
-Dillinger is currently extended with the following plugins.
-Instructions on how to use them in your own application are linked below.
-
 ## How To Work
 ``
 php artisan make:crud {model} {--option}
