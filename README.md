@@ -26,6 +26,8 @@ php artisan make:crud {model} {--option}
 
 `
 1.model= Your Already Created Model Name
+`
+`
 2.option=api (If You Want Api Crud)
 `
 ## License
