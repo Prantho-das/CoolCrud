@@ -75,7 +75,7 @@ class CrudCommand extends GeneratorCommand
         $views = ["edit", "index", "show"];
         File::makeDirectory(resource_path('views/' . $this->name), 0777, true, true);
         foreach ($views as $view) {
-            $path = resource_path('views/' . $this->name . '/' . $view . '.blade.php');
+            $path = resource_path('views/' . strtoloawer("$this->name") . '/' . $view . '.blade.php');
             File::put($path, "");
         }
     }
