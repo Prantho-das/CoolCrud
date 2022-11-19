@@ -42,19 +42,36 @@ class CrudCommand extends GeneratorCommand
         }
         $this->info('Created CRUD...');
     }
+    private function generateRoute($type,$contoller,$method){
+        try {
+            file_put_contents(
+                base_path('routes/web.php'),
+                "Route::$type(['$contoller','$method'])",
+                FILE_APPEND
+            );
+            return true;
+        } catch (\Exception $e) {
+            return $this->error($e->getMessage());
+        }
+        
+    }
     protected function generateCrudCode($stub)
     {
         $cruds = ["edit", "index", "show", "store", "update", "destroy"];
         $methods = [];
         $places = [];
-        foreach ($cruds as $key => $crud) {
-            $data = $this->{$crud}();
-            $places[] = "{{ $crud }}";
-            $methods[$key] = "$data";
+        try {
+            foreach ($cruds as $key => $crud) {
+                $data = $this->{$crud}();
+                $places[] = "{{ $crud }}";
+                $methods[$key] = "$data";
+            }
+            $rootNamespace = $this->rootNamespace();
+            $className = $this->name . "Controller";
+            return $stub = str_replace(array_merge($places, ["{{ rootNamespace }}", "{{ class }}"]), array_merge($methods, [$rootNamespace, $className]), $stub);
+        } catch (\Exception $e) {
+            return $this->error($e->getMessage());
         }
-        $rootNamespace = $this->rootNamespace();
-        $className = $this->name . "Controller";
-        return $stub = str_replace(array_merge($places, ["{{ rootNamespace }}", "{{ class }}"]), array_merge($methods, [$rootNamespace, $className]), $stub);
     }
     protected function getStub()
     {
